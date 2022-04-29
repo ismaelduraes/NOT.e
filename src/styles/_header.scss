@@ -1,0 +1,60 @@
+@import './colors';
+
+.header_container{
+    height: 60px;
+    width: 100%;
+    // background: linear-gradient($background 80%, transparent 100%);
+    background: $background;
+    h1{
+        margin: 0px;
+        font-family: $logo;
+        user-select: none;
+    }
+    // background: linear-gradient($accent 0%, transparent 50%);
+    // background: yellow;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    padding: 0% 3%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .logo{
+        height: 32px;
+        width: 32px;
+        // color: black;
+        margin-right: 10px;
+        // color: $accent;
+    }
+    box-sizing: border-box;
+    // backdrop-filter: blur(5px);
+    // background: linear-gradient( $accent 0%, transparent 100% );
+    .search_icon{
+        margin: 0px 20px;
+    }
+    .user_img{
+        border-radius: 50%;
+        height: 32px;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    .header_right{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    .refresh{
+        padding: 8px;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        &:hover{
+            cursor: pointer;
+            background: lightgray;
+        }
+    }
+
+    z-index: 2;
+}

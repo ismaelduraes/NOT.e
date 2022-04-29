@@ -1,0 +1,108 @@
+.note_container {
+    width: 100%;
+    height: fit-content;
+    max-height: 400px;
+
+    padding: 7%;
+    box-sizing: border-box;
+
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+
+    background: white;
+
+    overflow: hidden;
+    transition: all 0.05s ease-in-out;
+
+    &:hover {
+        outline: black solid 3px;
+    }
+
+    .title_container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        height: fit-content;
+
+        .pin_icon {
+            width: 20px;
+            height: 20px;
+            // padding: 6px;
+            // border-radius: 50%;
+        }
+        // box-sizing: border-box;
+    }
+
+    h3 {
+        margin: 0px;
+        margin-bottom: 10px;
+        font-size: 20px;
+        font-weight: 700;
+        // color: $accent;
+        width: 80%;
+        word-wrap: break-word;
+        // max-height: 5%;
+        text-overflow: clip;
+        overflow: hidden;
+        // overflow: hidden;
+        z-index: 1;
+
+        &:hover {
+            cursor: text;
+        }
+    }
+
+    p {
+        height: fit-content;
+        white-space: pre-wrap;
+        margin: 0px;
+        margin-bottom: 50px;
+
+        &:hover {
+            cursor: text;
+        }
+
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    &:hover {
+        cursor: pointer;
+        // transform: scale(1.03);
+        outline-style: solid;
+        outline-width: 3px;
+    }
+    .note_buttons {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        z-index: 1;
+    }
+    .icon {
+        width: 24px;
+        height: 24px;
+        // margin-right: 10px;
+        // color: $accent;
+    }
+    .note_img {
+        border-radius: 0px;
+        // margin: 5px 0px;
+        width: 100%;
+        height: 100%;
+        // aspect-ratio: 1;
+        object-fit: cover;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        opacity: 0.15;
+    }
+
+    .note_text {
+        margin-bottom: 10px;
+    }
+}
