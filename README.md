@@ -2,7 +2,7 @@
 
 NOT.e is a ReactJS app for taking notes, stored on, and authenticated by Firebase.
 
-[Live demo](ismaelduraes.github.io)
+[Live demo](https://ismaelduraes.github.io)
 
 # Build it yourself
 
