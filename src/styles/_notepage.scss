@@ -1,12 +1,12 @@
-@import './colors';
-@import './fonts';
+@import "./colors";
+@import "./fonts";
 
-.note_page_container{
+.note_page_container {
     height: 100%;
     width: 100%;
     // outline: solid;
     // background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(30px);
     top: 0;
     left: 0;
     position: fixed;
@@ -17,8 +17,7 @@
     overflow: visible;
     padding: 6% 6%;
 
-
-    .create_prompt{
+    .create_prompt {
         width: 90%;
         max-width: 350px;
         height: 85%;
@@ -31,9 +30,8 @@
         padding: 40px 40px;
         // z-index: 3;
         overflow: hidden;
-    
 
-        .note_text_container{
+        .note_text_container {
             margin: 0px;
             background: transparent;
             width: 100%;
@@ -45,8 +43,7 @@
             overflow-x: hidden;
             z-index: 1;
 
-
-            .prompt_note_text{
+            .prompt_note_text {
                 text-align: start;
                 background: transparent;
                 border-style: none;
@@ -57,7 +54,7 @@
                 // overflow: visible;
 
                 // outline: solid;
-                &:focus{
+                &:focus {
                     outline-style: none;
                 }
                 padding: 0px;
@@ -65,16 +62,15 @@
             }
             // outline: solid;
             margin-bottom: 20px;
-
         }
 
-        .header{
+        .header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
             box-sizing: border-box;
             margin-bottom: 20px;
-            .prompt_title{
+            .prompt_title {
                 margin: 0px;
                 background: transparent;
                 border-style: none;
@@ -85,23 +81,23 @@
                 // height: 30%;
                 // overflow-wrap: break-word;
                 padding: 0px;
-                
-                &:focus{
+
+                &:focus {
                     outline-style: none;
                 }
                 z-index: 1;
             }
-            .prompt_close{
+            .prompt_close {
                 background: gray;
                 color: white;
                 border-radius: 50%;
                 padding: 3px;
-                &:hover{
+                &:hover {
                     cursor: pointer;
                 }
                 z-index: 1;
             }
-            .note_img{
+            .note_img {
                 width: 100%;
                 height: 100%;
                 border-radius: 10px;
@@ -114,7 +110,7 @@
                 z-index: 0;
             }
         }
-        .save_button{
+        .save_button {
             background-color: $accent;
             width: fit-content;
             height: fit-content;
@@ -126,13 +122,13 @@
             box-sizing: border-box;
             color: $background;
             // margin-top: 100%;
-            &:hover{
+            &:hover {
                 cursor: pointer;
             }
         }
         // box-sizing: border-box;
     }
-    .create_buttons{
+    .create_buttons {
         display: flex;
         width: 100%;
         align-items: center;
@@ -140,7 +136,7 @@
         // margin-top: 100%;
 
         // align-self: flex-end;
-        .icon{
+        .icon {
             width: 26px;
             height: 26px;
             margin-right: 10px;

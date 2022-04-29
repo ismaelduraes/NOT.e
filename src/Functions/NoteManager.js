@@ -28,11 +28,10 @@ export async function getNotes() {
     const data = await getDocs(
         collection(db, `notes/user/${auth.currentUser.uid}`)
     );
-    return data.docs;
+    return data.docs.reverse();
 }
 
 export async function setNote(noteId, title, text, color, imageId) {
-    console.log(color);
     await setDoc(doc(db, `notes/user/${auth.currentUser.uid}/${noteId}`), {
         title,
         text,

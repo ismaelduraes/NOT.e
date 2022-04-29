@@ -1,17 +1,13 @@
-import { React, useState, useRef, useContext } from "react";
+import { React, useState, useContext, useEffect } from "react";
 
-import {
-    deleteNote,
-    getNotes,
-    setNote,
-    submitNote,
-} from "../Functions/NoteManager";
+import { deleteNote, getNotes, setNote } from "../Functions/NoteManager";
+
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import { IoTrashOutline } from "react-icons/io5";
 import { DataContext } from "../Context/DataContext";
 import { getImageById } from "../Functions/ImageManager";
 
-function NotePage(props) {
+function EditNoteModal({ setEditNotePageOpen, enableScroll }) {
     const { selectedNoteData } = useContext(DataContext);
     const { colorAvg } = selectedNoteData;
     const { setNotes } = useContext(DataContext);
@@ -20,7 +16,12 @@ function NotePage(props) {
     let bgColor = checkOverThreshold(colorAvg) ? "black" : "white";
 
     const [imageURL, setImageURL] = useState("");
-    getImageById(selectedNoteData.imageId).then((r) => setImageURL(r));
+    useEffect(() => {
+        if (selectedNoteData.imageId !== undefined)
+            getImageById(selectedNoteData.imageId).then((r) => {
+                setImageURL(r);
+            });
+    }, []);
 
     function checkOverThreshold(colorAvg) {
         if (colorAvg <= 360) {
@@ -42,19 +43,20 @@ function NotePage(props) {
                 css: selectedNoteData.colorCSS,
                 colorAvg: colorAvg,
             },
-            selectedNoteData.imageId
+            selectedNoteData.imageId ? selectedNoteData.imageId : ""
         );
-        getNotes().then((r) => DataContext.setNotes(r));
-        props.setNotePageVisible(false);
+        getNotes().then((r) => setNotes(r));
+        setEditNotePageOpen(false);
     }
 
-    props.enableScroll(false);
+    enableScroll(false);
+
     return (
         <div
             className="note_page_container"
             onClick={() => {
-                props.setNotePageVisible(false);
-                props.enableScroll(true);
+                setEditNotePageOpen(false);
+                enableScroll(true);
             }}
         >
             <div
@@ -63,13 +65,13 @@ function NotePage(props) {
                 style={{
                     background: selectedNoteData.colorCSS,
                     color: textColor,
-                    boxShadow: `0px 0px 40px ${selectedNoteData.colorCSS}`,
+                    // boxShadow: `0px 0px 80px ${selectedNoteData.colorCSS}`,
                 }}
             >
                 <div className="header">
-                    {selectedNoteData.imageURL && (
+                    {imageURL ? (
                         <img src={imageURL} alt="" className="note_img" />
-                    )}
+                    ) : null}
 
                     <input
                         style={{ color: textColor }}
@@ -85,9 +87,9 @@ function NotePage(props) {
                         className="prompt_close"
                         style={{ background: "white", color: "black" }}
                         onClick={() => {
-                            props.enableScroll(true);
-                            props.setNotePageVisible(false);
-                            setNote();
+                            enableScroll(true);
+                            setEditNotePageOpen(false);
+                            updateNote();
                         }}
                     />
                 </div>
@@ -109,16 +111,17 @@ function NotePage(props) {
                             className="icon"
                             onClick={() => {
                                 deleteNote(selectedNoteData.noteId);
-                                props.setNotePageVisible(false);
-                                props.enableScroll(true);
+                                getNotes().then((r) => setNotes(r));
+                                enableScroll(true);
+                                setEditNotePageOpen(false);
                             }}
                         />
                     </div>
                     <div
                         style={{ background: textColor, color: bgColor }}
                         onClick={() => {
-                            props.enableScroll(true);
-                            props.setNotePageVisible(false);
+                            enableScroll(true);
+                            setEditNotePageOpen(false);
                             if (noteTitle === "") {
                                 setNoteTitle("Nota sem nome");
                             }
@@ -137,4 +140,4 @@ function NotePage(props) {
     );
 }
 
-export default NotePage;
+export default EditNoteModal;

@@ -1,11 +1,7 @@
-@import './colors';
-
-.image_search_container{
-    
+.image_search_container {
     position: fixed;
     height: 100%;
     width: 100%;
-    // backdrop-filter: blur(20px);
     top: 0px;
     left: 0px;
     display: flex;
@@ -13,25 +9,23 @@
     align-items: center;
     justify-content: center;
     z-index: 4;
-    // box-sizing: border-box;
     overflow: hidden;
-    
-    .results{
+
+    .results {
         max-width: 400px;
         backdrop-filter: blur(10px);
-        background: rgba(255, 255, 255, 0.7);
-        .header{
+        background: $grayDark;
+        .header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            .title{
+            .title {
                 margin: 0px;
                 width: 90%;
                 margin-bottom: 10px;
             }
         }
 
-        // background: white;
         padding: 30px 40px;
         width: 90%;
         height: 90%;
@@ -40,34 +34,35 @@
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
-        
+
         position: relative;
 
-        .searchbar_container{
-            // position: fixed;
+        .searchbar_container {
             height: fit-content;
             box-sizing: border-box;
             display: flex;
             justify-content: center;
             align-items: center;
-            // margin-bottom: 20px;
 
-            input{
+            input {
+                color: white;
                 background: none;
                 border-style: none;
-                &:focus{
+                &:focus {
                     outline: none;
                 }
             }
-            .searchbar{
+            .searchbar {
                 width: 100%;
                 margin-bottom: 20px;
+
+                background-color: $gray;
             }
             margin-bottom: 20px;
             margin-top: 5%;
         }
 
-        .img_grid{
+        .img_grid {
             display: grid;
             grid-template-columns: 1fr;
             // height: 80%;
@@ -75,12 +70,11 @@
             overflow: scroll;
             border-radius: 20px;
 
-            .img_search_item{
+            .img_search_item {
                 width: 100%;
                 height: 100%;
                 border-radius: 20px;
             }
         }
     }
-
 }

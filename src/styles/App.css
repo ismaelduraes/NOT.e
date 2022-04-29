@@ -3,7 +3,7 @@
 .header_container {
   height: 60px;
   width: 100%;
-  background: #f0f0f0;
+  background: black;
   position: fixed;
   top: 0px;
   left: 0px;
@@ -85,13 +85,13 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 70px;
-  margin-bottom: 3vh;
+  margin-top: 80px;
+  margin-bottom: 10px;
 }
 
 .searchbar_container .searchbar {
-  background: lightgray;
-  color: darkslategray;
+  background: #0d0d0d;
+  color: #a59f62;
   width: 100%;
   height: 40px;
   display: -webkit-box;
@@ -142,10 +142,11 @@
   overflow: hidden;
   -webkit-transition: all 0.05s ease-in-out;
   transition: all 0.05s ease-in-out;
+  opacity: 0.8;
 }
 
 .note_container:hover {
-  outline: black solid 3px;
+  outline: #a59f62 solid 3px;
 }
 
 .note_container .title_container {
@@ -239,43 +240,11 @@
   margin-bottom: 10px;
 }
 
-#black_placeholder::-webkit-input-placeholder {
-  color: black !important;
-}
-
-#black_placeholder:-ms-input-placeholder {
-  color: black !important;
-}
-
-#black_placeholder::-ms-input-placeholder {
-  color: black !important;
-}
-
-#black_placeholder::placeholder {
-  color: black !important;
-}
-
-#white_placeholder::-webkit-input-placeholder {
-  color: white !important;
-}
-
-#white_placeholder:-ms-input-placeholder {
-  color: white !important;
-}
-
-#white_placeholder::-ms-input-placeholder {
-  color: white !important;
-}
-
-#white_placeholder::placeholder {
-  color: white !important;
-}
-
 .create_container {
   height: 100%;
   width: 100%;
-  -webkit-backdrop-filter: blur(20px);
-          backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(30px);
+          backdrop-filter: blur(30px);
   top: 0;
   left: 0;
   position: fixed;
@@ -297,7 +266,7 @@
   width: 90%;
   max-width: 400px;
   height: 90%;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(20, 20, 20, 0.6);
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
   border-radius: 20px;
@@ -352,6 +321,7 @@
   width: 80%;
   overflow-wrap: break-word;
   padding: 0px;
+  color: white;
 }
 
 .create_container .create_prompt .header .prompt_title:focus {
@@ -380,8 +350,7 @@
 }
 
 .create_container .create_prompt .header .prompt_close {
-  background: gray;
-  color: white;
+  color: #a59f62;
   border-radius: 50%;
   padding: 3px;
 }
@@ -406,6 +375,7 @@
   font-family: "Atkinson Hyperlegible", sans-serif;
   width: 100%;
   height: 100%;
+  color: white;
   padding: 0px;
   resize: none;
 }
@@ -415,7 +385,7 @@
 }
 
 .create_container .create_prompt .save_button {
-  background-color: darkslategray;
+  background-color: #a59f62;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -426,7 +396,7 @@
   border-radius: 50px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  color: #f0f0f0;
+  color: black;
 }
 
 .create_container .create_buttons {
@@ -446,22 +416,14 @@
   width: 26px;
   height: 26px;
   margin-right: 10px;
-  color: darkslategray;
-}
-
-.black_placeholder::-webkit-input-placeholder {
-  color: black;
-}
-
-.white_placeholder::-webkit-input-placeholder {
-  color: white;
+  color: #a59f62;
 }
 
 .account_container {
   position: fixed;
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
-  background: rgba(255, 255, 255, 0.7);
+  background: #1f1f1f;
   border-radius: 30px;
   height: 20vh;
   width: 150px;
@@ -522,8 +484,8 @@
 .note_page_container {
   height: 100%;
   width: 100%;
-  -webkit-backdrop-filter: blur(20px);
-          backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(30px);
+          backdrop-filter: blur(30px);
   top: 0;
   left: 0;
   position: fixed;
@@ -646,7 +608,7 @@
 }
 
 .note_page_container .create_prompt .save_button {
-  background-color: darkslategray;
+  background-color: #a59f62;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -660,7 +622,7 @@
   border-radius: 50px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  color: #f0f0f0;
+  color: black;
 }
 
 .note_page_container .create_prompt .save_button:hover {
@@ -714,7 +676,7 @@
   max-width: 400px;
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.7);
+  background: #0d0d0d;
   padding: 30px 40px;
   width: 90%;
   height: 90%;
@@ -770,6 +732,7 @@
 }
 
 .image_search_container .results .searchbar_container input {
+  color: white;
   background: none;
   border-style: none;
 }
@@ -781,6 +744,7 @@
 .image_search_container .results .searchbar_container .searchbar {
   width: 100%;
   margin-bottom: 20px;
+  background-color: #1f1f1f;
 }
 
 .image_search_container .results .img_grid {
@@ -820,7 +784,7 @@
           justify-content: center;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background: #f0f0f0;
+  background: black;
 }
 
 .signin_container .title {
@@ -829,7 +793,7 @@
   font-weight: normal;
   margin: 0px;
   margin-bottom: 20px;
-  color: darkslategray;
+  color: #a59f62;
   line-height: 60px;
   border-radius: 40px;
 }
@@ -891,7 +855,7 @@
 }
 
 .login {
-  background: black;
+  background: #1f1f1f;
   color: white;
   margin-top: 20px;
   border-radius: 20px;
@@ -912,7 +876,7 @@
 
 .login:hover {
   cursor: pointer;
-  outline-color: darkslategray;
+  outline-color: #a59f62;
   background: black;
   color: white;
 }
@@ -932,26 +896,26 @@
 
 body {
   padding: 3%;
-  padding-top: 0;
-  color: darkslategray;
+  padding-top: 0px;
+  color: #a59f62;
   font-family: "Atkinson Hyperlegible", sans-serif;
-  background-color: #f0f0f0;
+  background-color: black;
   letter-spacing: -0.5px;
 }
 
 .notes_title {
   font-size: 13px;
-  margin-left: 3%;
+  margin-left: 15px;
   margin-bottom: 5px;
-  color: gray;
+  color: #a59f62;
 }
 
 .new_button {
   font-size: 15px;
-  color: white;
+  color: black;
   height: 50px;
   width: 50px;
-  background: darkslategray;
+  background: #a59f62;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border-radius: 50%;
@@ -965,8 +929,8 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   position: fixed;
-  top: calc(100% - 10vh);
-  left: calc(100% - 50px - 3%);
+  bottom: 5vh;
+  right: 3vh;
   z-index: 1;
 }
 
@@ -1002,6 +966,6 @@ body {
 }
 
 .MuiCircularProgress-circle {
-  color: black;
+  color: #a59f62;
 }
 /*# sourceMappingURL=App.css.map */

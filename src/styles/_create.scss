@@ -1,19 +1,10 @@
-@import './colors';
-@import './fonts';
+@import "./colors";
+@import "./fonts";
 
-#black_placeholder::placeholder{
-    color: black !important;
-}
-#white_placeholder::placeholder{
-    color: white !important;
-}
-
-.create_container{
+.create_container {
     height: 100%;
     width: 100%;
-    // outline: solid;
-    // background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(30px);
     top: 0;
     left: 0;
     position: fixed;
@@ -21,11 +12,11 @@
     justify-content: center;
     align-items: center;
 
-    .create_prompt{
+    .create_prompt {
         width: 90%;
         max-width: 400px;
         height: 90%;
-        background: rgba(255, 255, 255, 0.6);
+        background: rgba(20, 20, 20, 0.6);
         backdrop-filter: blur(5px);
         border-radius: 20px;
         padding: 40px 40px;
@@ -34,12 +25,10 @@
         flex-direction: column;
         overflow: hidden;
 
-        .note_img{
+        .note_img {
             border-radius: 0px;
-            // margin: 5px 0px;
             width: 100%;
             height: 100%;
-            // aspect-ratio: 1;
             object-fit: cover;
             position: absolute;
             top: 0px;
@@ -47,14 +36,14 @@
             opacity: 0.15;
             pointer-events: none;
         }
-        .header{
+        .header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
             box-sizing: border-box;
             margin-bottom: 20px;
 
-            .prompt_title{
+            .prompt_title {
                 margin: 0px;
                 background: transparent;
                 border-style: none;
@@ -62,34 +51,34 @@
                 font-weight: bold;
                 font-family: $font;
                 width: 80%;
-                // height: fit-content;
                 overflow-wrap: break-word;
                 padding: 0px;
-                
-                &:focus{
+
+                color: white;
+
+                &:focus {
                     outline-style: none;
                 }
-                &::placeholder{
+                &::placeholder {
                     display: flex;
                 }
             }
-            .prompt_close{
-                background: gray;
-                color: white;
+            .prompt_close {
+                color: $accent;
                 border-radius: 50%;
                 padding: 3px;
-                &:hover{
+                &:hover {
                     cursor: pointer;
                 }
             }
         }
-        .note_text_container{
+        .note_text_container {
             margin: 0px;
             background: transparent;
             width: 100%;
             height: 80%;
 
-            .prompt_note_text{
+            .prompt_note_text {
                 text-align: start;
                 background: transparent;
                 border-style: none;
@@ -97,19 +86,18 @@
                 font-family: $font;
                 width: 100%;
                 height: 100%;
-                // outline: solid;
-                &:focus{
+
+                color: white;
+
+                &:focus {
                     outline-style: none;
                 }
                 padding: 0px;
                 resize: none;
-
             }
-            // outline: solid;
             margin-bottom: 20px;
-
         }
-        .save_button{
+        .save_button {
             background-color: $accent;
             width: fit-content;
             font-size: 14px;
@@ -120,15 +108,13 @@
             box-sizing: border-box;
             color: $background;
         }
-        // box-sizing: border-box;
     }
-    .create_buttons{
+    .create_buttons {
         display: flex;
         width: 100%;
         align-items: center;
         justify-content: space-between;
-        // align-self: flex-end;
-        .icon{
+        .icon {
             width: 26px;
             height: 26px;
             margin-right: 10px;
@@ -136,14 +122,5 @@
         }
     }
     box-sizing: border-box;
-    // overflow-x: hidden;
     z-index: 3;
-}
-
-//add class on component logic to dynamically change placeholder color
-.black_placeholder::-webkit-input-placeholder{
-    color: black;
-}
-.white_placeholder::-webkit-input-placeholder{
-    color: white;
 }

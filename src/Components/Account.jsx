@@ -1,19 +1,20 @@
 import { signOut } from "@firebase/auth";
 import { auth } from "../firebase-config";
-import React from "react";
+import React, { useContext } from "react";
 import { IoExitOutline } from "react-icons/io5";
+import { AuthContext } from "../Context/AuthContext";
 
-function Account(props) {
+function Account({ displayName }) {
+    const { setIsAuth } = useContext(AuthContext);
     function signUserOut() {
         signOut(auth).then(() => {
-            props.setIsAuth(false);
-            props.accountPopupHook(false);
+            setIsAuth(false);
         });
     }
 
     return (
         <div className="account_container">
-            <h2 className="user_display_name">{props.displayName}</h2>
+            <h2 className="user_display_name">{displayName}</h2>
             <ul className="account_ul">
                 <li onClick={signUserOut}>
                     <IoExitOutline className="icon" />

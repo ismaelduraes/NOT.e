@@ -1,18 +1,17 @@
-@import './colors';
+@import "./colors";
 
-.searchbar_container{
+.searchbar_container {
     width: 100%;
     height: 40px;
     min-height: 5vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 70px;
+    margin-top: 80px;
+    margin-bottom: 10px;
 
-    .searchbar{
-        // outline-style: solid;
-        // outline-width: 3px;
-        background: $gray;
+    .searchbar {
+        background: $grayDark;
         color: $accent;
         width: 100%;
         height: 40px;
@@ -23,16 +22,15 @@
         border-radius: 10px;
         gap: 10px;
 
-        .search_input{
+        .search_input {
             height: 100%;
             width: 100%;
             background: none;
             border-style: none;
             border-width: 0px;
-            &:focus{
+            &:focus {
                 outline-style: none;
             }
         }
     }
-    margin-bottom: 3vh;
 }

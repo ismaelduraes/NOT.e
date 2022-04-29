@@ -12,7 +12,7 @@ import { getImageById } from "../Functions/ImageManager";
 import { getNotes, submitNote } from "../Functions/NoteManager";
 import { DataContext } from "../Context/DataContext";
 
-function Create(props) {
+function Create({ setCreateNotePageOpen, enableScroll }) {
     const [noteTitle, setNoteTitle] = useState("Nota sem nome");
     const [noteText, setNoteText] = useState("Nota sem texto");
 
@@ -30,7 +30,8 @@ function Create(props) {
     }, []);
 
     useEffect(() => {
-        //imageId is set by ImageSearch component
+        //setting selected image as background
+        //(imageId is set by ImageSearch component)
         if (imageId)
             getImageById(imageId).then((r) => {
                 setImageURL(r);
@@ -50,13 +51,14 @@ function Create(props) {
     }
 
     async function submit() {
-        submitNote(noteTitle, noteText, generateColors(), imageId);
+        console.log("sending", imageId, "to submit");
+        submitNote(noteTitle, noteText, generateColors(), imageId.toString());
 
         //refetch after creating a new note
         getNotes().then((r) => dataContext.setNotes(r));
-        props.setIsCreating(false);
+        setCreateNotePageOpen(false);
     }
-    props.enableScroll(false);
+    enableScroll(false);
 
     return (
         <div className="create_container">
@@ -82,8 +84,8 @@ function Create(props) {
                     <CloseRoundedIcon
                         className="prompt_close"
                         onClick={() => {
-                            props.enableScroll(true);
-                            props.setIsCreating(false);
+                            enableScroll(true);
+                            setCreateNotePageOpen(false);
                             if (
                                 noteTitle !== "Nota sem nome" ||
                                 noteText !== "Nota sem texto"
@@ -108,7 +110,10 @@ function Create(props) {
                     <div className="icon_buttons">
                         <IoTrashOutline
                             className="icon"
-                            onClick={() => props.setIsCreating(false)}
+                            onClick={() => {
+                                setCreateNotePageOpen(false);
+                                enableScroll(true);
+                            }}
                         />
                         <IoMdImages
                             className="icon"
@@ -118,8 +123,8 @@ function Create(props) {
                     <div
                         className="save_button"
                         onClick={() => {
-                            props.enableScroll(true);
-                            props.setIsCreating(false);
+                            enableScroll(true);
+                            setCreateNotePageOpen(false);
                             if (
                                 noteTitle !== "Nota sem nome" ||
                                 noteText !== "Nota sem texto"

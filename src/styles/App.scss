@@ -1,84 +1,75 @@
-@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 
-@import './colors';
-@import './fonts';
-@import './header';
-@import './searchbar';
-@import './note';
-@import './create';
-@import './account';
-@import './notepage';
-@import './imagesearch';
+@import "./colors";
+@import "./fonts";
+@import "./header";
+@import "./searchbar";
+@import "./note";
+@import "./create";
+@import "./account";
+@import "./notepage";
+@import "./imagesearch";
 
-@import './signin';
+@import "./signin";
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
     width: 5px;
     border-radius: 10px;
 }
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
     background: rgba(0, 0, 0, 0.15);
 }
 
-.App{
+.App {
     padding: 3px;
 }
 
-body{
+body {
     padding: 3%;
-    padding-top: 0;
-    // width: 100%;
-    // height: 100%;
+    padding-top: 0px;
     color: $text;
     font-family: $font;
     background-color: $background;
     letter-spacing: -0.5px;
 }
-.notes_title{
+.notes_title {
     font-size: 13px;
-    margin-left: 3%;
+    margin-left: 15px;
     margin-bottom: 5px;
-    color: gray;
+    color: $accent;
 }
 
-.new_button{
+.new_button {
     font-size: 15px;
-    color: white;
-    // background-color: $accent;
-    // width: 100%;
+    color: black;
     height: 50px;
     width: 50px;
-    // padding: 0px 5%;
     background: $accent;
     box-sizing: border-box;
     border-radius: 50%;
-    // box-shadow: 0px 0px 20px black;
-    // outline-style: solid;
     display: flex;
     align-items: center;
     justify-content: center;
-    // gap: 5px;
     position: fixed;
-    top: calc(100% - 10vh);
-    // left: calc(90% - 25px);
-    left: calc(100% - 50px - 3%);
+    bottom: 5vh;
+    right: 3vh;
 
-    &:hover{
+    &:hover {
         cursor: pointer;
     }
-    .create_icon{
+    .create_icon {
         width: 24px;
         height: 24px;
     }
-    .user_img{
+    .user_img {
         border-radius: 50%;
         height: 48px;
     }
     z-index: 1;
 }
 
-.loading{
+.loading {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -89,6 +80,6 @@ body{
     justify-content: center;
     align-items: center;
 }
-.MuiCircularProgress-circle{
-    color: black;
+.MuiCircularProgress-circle {
+    color: $accent;
 }

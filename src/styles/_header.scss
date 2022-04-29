@@ -1,17 +1,15 @@
-@import './colors';
+@import "./colors";
 
-.header_container{
+.header_container {
     height: 60px;
     width: 100%;
-    // background: linear-gradient($background 80%, transparent 100%);
+
     background: $background;
-    h1{
+    h1 {
         margin: 0px;
         font-family: $logo;
         user-select: none;
     }
-    // background: linear-gradient($accent 0%, transparent 50%);
-    // background: yellow;
     position: fixed;
     top: 0px;
     left: 0px;
@@ -20,7 +18,7 @@
     align-items: center;
     justify-content: space-between;
 
-    .logo{
+    .logo {
         height: 32px;
         width: 32px;
         // color: black;
@@ -30,27 +28,27 @@
     box-sizing: border-box;
     // backdrop-filter: blur(5px);
     // background: linear-gradient( $accent 0%, transparent 100% );
-    .search_icon{
+    .search_icon {
         margin: 0px 20px;
     }
-    .user_img{
+    .user_img {
         border-radius: 50%;
         height: 32px;
-        &:hover{
+        &:hover {
             cursor: pointer;
         }
     }
-    .header_right{
+    .header_right {
         display: flex;
         align-items: center;
         gap: 20px;
     }
-    .refresh{
+    .refresh {
         padding: 8px;
         width: 26px;
         height: 26px;
         border-radius: 50%;
-        &:hover{
+        &:hover {
             cursor: pointer;
             background: lightgray;
         }
