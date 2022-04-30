@@ -17,7 +17,8 @@ NOT.e is a ReactJS app for taking notes, stored on, and authenticated by Firebas
     `npm install`
 4.  Set your Firebase project up through the [Firebase console](https://console.firebase.google.com/) and add it's credentials to `src/firebase-config.js.TEMPLATE`
 5.  Add your Pixabay API keys to `.env.TEMPLATE`
-6.  Run NOT.e with `npm start`
+6.  Make a copy of both `.env.TEMPLATE` and `src/firebase-config.js.TEMPLATE` (in place) and rename them to remove the `.TEMPLATE` suffix.
+7.  Run NOT.e with `npm start`
 
 # Important
 
