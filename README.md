@@ -8,7 +8,7 @@ NOT.e is a ReactJS app for taking notes, stored on, and authenticated by Firebas
 
 1.  Clone this repo:
     <br/>
-    `git clone https://github.com/halaxysounds/NOT.e`
+    `git clone https://github.com/ismaelduraes/NOT.e`
 2.  cd into it's directory:
     <br/>
     `cd NOT.e`
